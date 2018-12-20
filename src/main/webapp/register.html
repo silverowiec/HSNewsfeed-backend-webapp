@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<script type="text/javascript" src="skrypty/addSchool.js"></script>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>HS Newsfeed</title>
+
+<!-- Bootstrap -->
+<link href="../butstrap/css/bootstrap.css" rel="stylesheet">
+<style type="text/css">
+@import url("css/bootstrap.css");
+@import url("css/bootstrap-theme.css");
+</style>
+
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+</head>
+<body>
+<nav class="navbar navbar-default">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#defaultNavbar1"><span class="sr-only">Toggle navigation</span><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span></button>
+      <a class="navbar-brand" href="#">HighSchool Newsfeed</a></div>
+    <!-- Collect the nav links, forms, and other content for toggling -->
+    <div class="collapse navbar-collapse" id="defaultNavbar1">
+      <ul class="nav navbar-nav">
+        <li><a href="index.html">HOME<span class="sr-only"></span></a></li>
+        <li><a href="about.html">O programie<span class="sr-only"></span></a></li>
+      </ul>
+      <form class="navbar-form navbar-left" role="search">
+        <div class="form-group"> </div>
+</form>
+      <ul class="nav navbar-nav navbar-right">
+        <li class="active"><a href="register.html">Zgłoś szkołę </a></li>
+        <li><a href="contact.html">Kontakt</a></li>
+        <li class="dropdown">
+<ul class="dropdown-menu" role="menu">
+            <li><a href="#">Action</a></li>
+            <li><a href="#">Another action</a></li>
+            <li><a href="#">Something else here</a></li>
+            <li class="divider"></li>
+            <li><a href="#">Separated link</a></li>
+          </ul>
+        </li>
+      </ul>
+    </div>
+    <!-- /.navbar-collapse -->
+  </div>
+  <!-- /.container-fluid -->
+</nav>
+<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+
+<div class="jumbotron">
+  <h1>Krok 1 - dodaj szkołę</h1>
+  <p>
+
+  Podaj nazwę swojej szkoły. Zacznij od miasta w którym się znajduje np. Staszów - Liceum Ogólnokształcące</p>
+    <input type="text" name="textfield" id="schoolname" placeholder="Nazwa szkoły">
+    <p>Podaj kod szkoły. Potrzebny on będzie podczas logowania do serwisu. Dobrym przykładem na kod szkoły będzie kod pocztowy oraz literka w wypadku kilku szkół z danego miasta. Przykład: 28200A (pierwsze liceum w Staszowie).</p>
+    <input type="text" name="textfield" id="schoolcode" placeholder="Kod szkoły">
+    <p>Podaj maksymalną liczbę uczniów w klasie. Pomoże to poprawnie losować szczęśliwy numerek.</p>
+    <input type="text" name="textfield" id="pupilscount" placeholder="Maks. liczba uczniów">
+    <p>Podaj hasło. Potrzebne będzie podczas dodawania wiadomości lub edycji planu lekcji. Wymagany jest również podczas używania aplikacji jako nauczyciel - trzymaj je w sekrecie, jednak podziel się z nim z nauczycielami.</p>
+    <input type="password" name="textfield" id="password" placeholder="Hasło">
+    <p>Podaj swój adres email. Pomoże mi skontaktować się z Tobą w razie potrzeby.</p>
+    <input type="text" name="textfield" id="email" placeholder="Twój email">
+    <p><a class="btn btn-primary btn-lg" onClick="javascript:google.devrel.functions.addSchool();" role="button">Zarejestruj szkołę</a></p>
+</div>
+<div class="jumbotron">
+  <h1>Krok 2 - zdefiniuj godziny lekcyjne</h1>
+  <p>O której godzinie zaczynają się zajęcia w Twojej szkole? Dodaj godziny lekcyjne i godziny ich rozpoczęcia. Zacznij od godziny zerowej. Gdy dodasz wszystkie lekcje, przejdź do kroku 3.</p>
+  <div class="list-group"><a class="list-group-item active">
+    <h4 class="list-group-item-heading">Numer lekcji:</h4>
+    <p class="list-group-item-text" id="lessoncount">0</p>
+  </a><a class="list-group-item">
+
+  <h4 class="list-group-item-heading">O której godzinie zaczyna się ta lekcja?</h4>
+  <input type="number" placeholder="godzina" id="hour">:<input type="number" id="minute" placeholder="minuta">
+  <p><a class="btn btn-primary btn-lg" onClick="javascript:google.devrel.functions.addHour();" role="button">Dodaj lekcję</a></p>
+  </a><a class="list-group-item disabled">
+  <h4 class="list-group-item-heading" id="lessoncontainer">Dodane lekcje:</h4>
+  <p class="list-group-item-text">&nbsp;</p>
+  </a></div>
+
+</div>
+<div class="jumbotron">
+  <h1>Krok 3 - Potwierdź rejestrację</h1>
+  <p> Ten krok jest wymagany, powinien go wykonać Dyrektor/Sekretariat/Nauczyciel.</p>
+  <p>Proszę o potwierdzenie swojej rejestracji jako jedna z powyższych osób, wysyłając do mnie wiadomość email na adres: silverowiec@gmail.com</p>
+  <p>W przypadku braku potwierdzenia konto szkoły zostanie usunięte w ciągu 48 godzin od daty rejestracji.</p>
+  <p>Zaloguj się przez zakładkę "dla szkoły" na stronie hsnewsfeed.pl i dodaj pierwsze ogłoszenie, oraz dodaj plan lekcji. </p>
+  <p><span class="label label-success">Gratulacje! Twoj szkoła dołączyła do grona HS Newsfeed!</span></p>
+</div>
+<div class="well" align="center"> ©2016 Dawid Walas</div>
+<script src="../butstrap/js/jquery-1.11.3.min.js"></script>
+<script type="text/javascript">
+        function init() {
+            google.devrel.functions.init('https://localhost:8080/_ah/api');
+        }
+    </script>
+<script src="https://apis.google.com/js/client.js?onload=init"></script>
+</body>
+</html>

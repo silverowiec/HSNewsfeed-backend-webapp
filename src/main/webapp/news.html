@@ -1,0 +1,67 @@
+<!doctype html>
+<html>
+<head>
+<script type="text/javascript" src="skrypty/news.js"></script>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>HS Newsfeed</title>
+<style type="text/css">
+@import url("css/bootstrap.css");
+@import url("css/bootstrap-theme.css");
+</style>
+<script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+<script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+<![endif]-->
+</head>
+
+<body style="padding-top: 70px">
+
+<nav class="navbar navbar-default navbar-fixed-top">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#topFixedNavbar1" aria-expanded="false"><span class="sr-only">Toggle navigation</span><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span></button>
+      <a class="navbar-brand" href="#">HighSchool Newsfeed</a></div>
+    <div class="collapse navbar-collapse" id="topFixedNavbar1">
+      <ul class="nav navbar-nav">
+        <li><a href="home.html">Home<span class="sr-only">(current)</span></a></li>
+        <li class="active"><a href="news.html">Tablica ogłoszeń</a></li>
+        <li><a href="timeTable.html">Plan lekcji</a></li>
+      </ul>
+        </li>
+      </ul>
+<ul class="nav navbar-nav navbar-right">
+        <li><a href="contact.html">Kontakt</a></li>
+        <li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Dla Szkoły<span class="caret"></span></a>
+          <ul class="dropdown-menu">
+            <li><a href="addMessage.html">Dodaj Ogłoszenie</a></li>
+            <li><a href="editTimeTable.html">Edytuj plan lekcji</a></li>
+            <li role="separator" class="divider"></li>
+            <li><a href="index.html" onClick="javascript:localStorage.clear();">Zmień szkołę</a></li>
+          </ul>
+        </li>
+      </ul>
+    </div>
+    <!-- /.navbar-collapse --></div>
+  <!-- /.container-fluid -->
+</nav>
+<div class="container-fluid" id="messages-container">
+  <div class="list-group"><a class="list-group-item active">
+   <p> <h4 class="list-group-item-heading" id="lucky-container">
+     Szczęśliwy numerek: </h4>
+   </p>
+  </a><button type="button" id="asTeacherBtn" onClick="javascript:google.devrel.functions.asTeacherList();" class="btn btn-info">Zaloguj jako nauczyciel</button></div>
+
+
+</div>
+<div class="well" align="center"> ©2016 Dawid Walas</div>
+<script src="js/jquery-1.11.3.min.js"></script>
+<script src="js/bootstrap.js"></script>
+<script type="text/javascript">
+        function init() {
+            google.devrel.functions.init('https://localhost:8080/_ah/api');
+        }
+    </script>
+<script src="https://apis.google.com/js/client.js?onload=init"></script>
+</body>
+</html>
